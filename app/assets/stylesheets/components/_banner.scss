@@ -1,0 +1,30 @@
+.banner-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100vw;
+  height: 40vh;
+  background-color: $dark-blue;
+  h1 {
+    text-align: center;
+    color: white;
+  }
+}
+.banner-img {
+  width: 60%;
+  height: auto;
+  background: linear-gradient(to right, rgba(0,0,0,0.3),rgba(0,0,0,0.1));
+}
+.banner-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 40%;
+  margin: 1rem;
+  h2 {
+    color: white;
+    opacity: 0.8;
+    margin-block-end: 0;
+    text-align: center;
+  }
+}

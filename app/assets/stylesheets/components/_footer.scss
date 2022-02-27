@@ -1,0 +1,22 @@
+.footer-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: $dark-blue;
+  width: 100vw;
+  height: 10vh;
+  a{
+    color: white;
+  }
+  a:hover {
+    opacity: 0.8;
+  }
+}
+.footer-link-left {
+  width: 40%;
+}
+.footer-link-right {
+  display: flex;
+  justify-content: space-between;
+  width: 35%;
+}
