@@ -250,7 +250,7 @@ DEPENDENCIES
   capybara (>= 3.26)
   devise
   dotenv-rails
-  font-awesome-sass
+  font-awesome-sass (~> 5.15.1)
   jbuilder (~> 2.7)
   listen (~> 3.3)
   pg (~> 1.1)

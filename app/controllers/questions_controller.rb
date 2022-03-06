@@ -1,4 +1,6 @@
 class QuestionsController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:index]
+  before_action :set_question, only: [:show, :edit, :update, :destroy]
 
   def index
     @questions = policy_scope(Question).order(created_at: :desc)
@@ -7,17 +9,20 @@ class QuestionsController < ApplicationController
   end
 
   def show
-    @question = Question.find(params[:id])
   end
 
   def new
-    authorize @question
+    @user = current_user
     @question = Question.new
+    @question.user = @user
+    authorize @question
   end
 
   def create
-    authorize @question
+    @user = current_user
     @question = Question.new(question_params)
+    @question.user = @user
+    authorize @question
     if @question.save
       redirect_to question_path(@question)
     else
@@ -26,26 +31,29 @@ class QuestionsController < ApplicationController
   end
 
   def edit
-    authorize @question
-    @question = Question.find(params[:id])
   end
 
   def update
-    authorize @question
-    @question.update(question_params)
-    redirect_to question_path(@question)
+    if @question.update(question_params)
+      redirect_to question_path(@question)
+    else
+      render :edit
+    end
   end
 
   def destroy
-    authorize @question
-    @question= Question.find(params[:id])
     @question.destroy
     redirect_to root_path
   end
 
   private
 
+  def set_question
+    @question = Question.find(params[:id])
+    authorize @question
+  end
+
   def question_params
-    params.require(:question).permit(:statement, :prop_one, :prop_two, :prop_three)
+    params.require(:question).permit(:statement, :prop_one, :prop_two, :prop_three, :level, :category)
   end
 end

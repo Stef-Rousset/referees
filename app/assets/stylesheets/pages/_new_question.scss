@@ -1,0 +1,27 @@
+.new-question-container, .edit-question-container {
+  width: 65%;
+  margin: auto;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+.simple_form.new_question, .simple_form.edit_question {
+  display: flex;
+  flex-direction: column;
+}
+.submit-new-question, .submit-edit-question {
+  align-self: center;
+}
+.new-question-level, .new-question-category, .edit-question-level, .edit-question-category {
+  fieldset {
+    display: flex;
+    justify-content: space-around;
+    font-size: 1.1rem;
+  }
+}
+.form-check {
+  margin-right: 2rem;
+}
+.edit-questions-links {
+  display: flex;
+  justify-content: space-around;
+}

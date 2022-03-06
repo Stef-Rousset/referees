@@ -1,0 +1,11 @@
+<div class="questions-index-container">
+<% while @questions.length > 0 %>
+  <% @question = @questions.sample %>
+  <div class="question-sample">
+    <h3><% @question.statement %></h3>
+
+  </div>
+  <% @questions.delete(@question) %>
+<% end %>
+
+</div>

@@ -1,0 +1,16 @@
+<div class="new-question-container">
+  <h3>Rédiger une question</h3>
+  <%= simple_form_for(@question) do |f| %>
+  <div class="new-question-level">
+    <%= f.input :level, as: :radio_buttons, label: "Niveau", collection: [["départemental", "départemental"], ["régional", "régional"]] %>
+  </div>
+  <div class="new-question-category">
+    <%= f.input :category, as: :radio_buttons, label: "Catégorie", collection: [["généralités", "généralités"], ["fleuret", "fleuret"], ["épée", "épée"], ["sabre", "sabre"]] %>
+  </div>
+  <%= f.input :statement, :label => "Énoncé de la question" %>
+  <%= f.input :prop_one, :label => "Réponse une" %>
+  <%= f.input :prop_two, :label => "Réponse deux" %>
+  <%= f.input :prop_three, :label => "Réponse trois" %>
+  <%= f.submit "Valider la question", class: "btn-blue submit-new-question" %>
+  <% end %>
+</div>

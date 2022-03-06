@@ -1,0 +1,19 @@
+<div class="edit-question-container">
+  <h3>Modifier une question</h3>
+  <%= simple_form_for(@question) do |f| %>
+  <div class="edit-question-level">
+    <%= f.input :level, as: :radio_buttons, label: "Niveau", collection: [["départemental", "départemental"], ["régional", "régional"]] %>
+  </div>
+  <div class="edit-question-category">
+    <%= f.input :category, as: :radio_buttons, label: "Catégorie", collection: [["généralités", "généralités"], ["fleuret", "fleuret"], ["épée", "épée"], ["sabre", "sabre"]] %>
+  </div>
+  <%= f.input :statement, :label => "Énoncé de la question" %>
+  <%= f.input :prop_one, :label => "Réponse une" %>
+  <%= f.input :prop_two, :label => "Réponse deux" %>
+  <%= f.input :prop_three, :label => "Réponse trois" %>
+  <div class="edit-questions-links">
+    <%= f.submit "Valider les modifications", class: "btn-blue submit-edit-question" %>
+    <%= link_to "Annuler les modifications", :back, class: "btn-blue submit-edit-question" %>
+  </div>
+  <% end %>
+</div>

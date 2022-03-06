@@ -40,31 +40,12 @@
           </div>
         </div>
         <div class="filters-buttons">
-          <%= submit_tag 'Commencer', class: 'btn-blue questions-filter-form-button' %>
-          <a href="#"><i class="fa-solid fa-backward btn-blue"></i></a>
+          <%= submit_tag 'Commencer', class: 'btn-blue' %>
+          <a href="#" class='btn-blue'><i class="fas fa-backward"></i></a>
         </div>
       <% end %>
     </div>
   </div>
 
 </div>
-<script>
-  let selectButton = document.querySelector('.select-questions');
-  let filterDiv = document.querySelector('.filters-questions');
-  let qcmButton = document.querySelector('.complete-qcm');
-  let backButton = document.querySelector('fa-backward');
-  if (selectButton) {
-      selectButton.addEventListener('click', function(){
-        filterDiv.classList.toggle('hide-element');
-        qcmButton.classList.toggle('hide-element');
-        selectButton.classList.toggle('hide-element');
-      })
-  }
-  if (backButton) {
-      backButton.addEventListener('click', function(){
-        filterDiv.classList.toggle('hide-element');
-        qcmButton.classList.toggle('hide-element');
-        selectButton.classList.toggle('hide-element');
-      })
-  }
-</script>
+

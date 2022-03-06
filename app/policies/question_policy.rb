@@ -6,23 +6,27 @@ class QuestionPolicy < ApplicationPolicy
   end
 
   def new?
-    user.role == "contributor" || user.role == "admin"
+    true
+  end
+
+  def show?
+    user.contributor? || user.admin?
   end
 
   def create?
-    user.role == "contributor" || user.role == "admin"
+    user.contributor? || user.admin?
   end
 
   def edit?
-    record.user == user || user.role == "admin"
+    record.user == user || user.admin?
   end
 
   def update?
-    record.user == user || user.role == "admin"
+    record.user == user || user.admin?
   end
 
   def destroy?
-    record.user == user || user.role == "admin"
+    record.user == user || user.admin?
   end
 
 end

@@ -10,35 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_03_05_135329) do
+ActiveRecord::Schema.define(version: 2022_03_06_154029) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "categories", force: :cascade do |t|
-    t.integer "name"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "levels", force: :cascade do |t|
-    t.integer "name"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
 
   create_table "questions", force: :cascade do |t|
     t.text "statement"
     t.text "prop_one"
     t.text "prop_two"
     t.text "prop_three"
-    t.bigint "category_id", null: false
-    t.bigint "level_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "user_id", null: false
-    t.index ["category_id"], name: "index_questions_on_category_id"
-    t.index ["level_id"], name: "index_questions_on_level_id"
+    t.integer "level"
+    t.integer "category"
     t.index ["user_id"], name: "index_questions_on_user_id"
   end
 
@@ -57,7 +43,5 @@ ActiveRecord::Schema.define(version: 2022_03_05_135329) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "questions", "categories"
-  add_foreign_key "questions", "levels"
   add_foreign_key "questions", "users"
 end
