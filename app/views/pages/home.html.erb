@@ -2,5 +2,50 @@
   <div class="home-text">
     <button class="btn-blue select-questions"> Sélectionner des questions</button>
     <button class="btn-blue complete-qcm"> QCM complet chronométré</button>
+    <div class="filters-questions hide-element">
+      <h2>Filtrer les questions par</h2>
+      <%= form_with(url: questions_path(@questions), method: 'get', local: true, class: "questions-search-form") do %>
+        <div class="questions-level-search">
+          <h3>Niveau :</h3>
+          <div class="questions-level-inputs">
+            <div class="level-choice">
+              <%= label_tag "questions-level-dep", 'Départemental' %>
+              <%= radio_button_tag(:level, "départemental") %>
+            </div>
+            <div class="level-choice">
+              <%= label_tag "questions-level-reg", 'Régional' %>
+              <%= radio_button_tag(:level, "régional") %>
+            </div>
+          </div>
+        </div>
+        <div class="questions-category-search">
+          <h3>Catégorie :</h3>
+          <div class="questions-category-inputs">
+            <div class="category-choice">
+              <%= label_tag "questions-category-general", 'Généralités' %>
+              <%= radio_button_tag(:category, "généralités") %>
+            </div>
+            <div class="category-choice">
+              <%= label_tag "questions-category-fleuret", 'Spécifique fleuret' %>
+              <%= radio_button_tag(:category, "fleuret") %>
+            </div>
+            <div class="category-choice">
+              <%= label_tag "questions-category-epee", 'Spécifique épée' %>
+              <%= radio_button_tag(:category, "épée") %>
+            </div>
+            <div class="category-choice">
+              <%= label_tag "questions-category-sabre", 'Spécifique sabre' %>
+              <%= radio_button_tag(:category, "sabre") %>
+            </div>
+          </div>
+        </div>
+        <div class="filters-buttons">
+          <%= submit_tag 'Commencer', class: 'btn-blue' %>
+          <a href="#" class='btn-blue'><i class="fas fa-backward"></i></a>
+        </div>
+      <% end %>
+    </div>
   </div>
+
 </div>
+

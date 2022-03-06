@@ -1,0 +1,28 @@
+.show-question-container {
+  display: flex;
+  flex-direction: column;
+  width: 65%;
+  margin: auto;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  h3 {
+    margin-bottom: 2rem;
+  }
+  h4 {
+    font-style: italic;
+    text-align: justify;
+  }
+  a {
+    margin-top: 2rem;
+    align-self: center;
+  }
+}
+.question-content {
+  width: 100%;
+  margin: auto;
+  margin-top: 1rem;
+  li {
+    text-align: justify;
+    font-style: italic;
+  }
+}
