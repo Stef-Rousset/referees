@@ -1,11 +1,23 @@
 <div class="questions-index-container">
-<% while @questions.length > 0 %>
-  <% @question = @questions.sample %>
-  <div class="question-sample">
-    <h3><% @question.statement %></h3>
-
-  </div>
-  <% @questions.delete(@question) %>
+<% @questions.each_with_index do |question, index| %>
+  <h3><%= @questions.length %> questions de niveau <%= question.level %>, catégorie <%= question.category %></h3>
+  <form data-index="<%= index %>" class="question-index-forms">
+    <legend><%= question.statement %> :</legend>
+    <label>
+      <input name="question" type="radio" >
+      <%= question.prop_one %>
+    </label>
+    <label>
+      <input name="question" type="radio" >
+      <%= question.prop_two %>
+    </label>
+    <label>
+      <input name="question" type="radio" >
+      <%= question.prop_three %>
+    </label>
+    <button class="question-index-forms-submit btn-blue">Valider</button>
+  </form>
 <% end %>
-
+<%= will_paginate @questions, class: "apple_pagination" %>
 </div>
+

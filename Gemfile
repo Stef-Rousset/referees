@@ -34,6 +34,8 @@ gem 'pundit'
 gem 'autoprefixer-rails', '10.2.5'
 gem 'font-awesome-sass',  '~> 5.15.1'
 gem 'simple_form'
+gem 'will_paginate', '~> 3.3'
+
 group :development, :test do  gem 'pry-byebug'
   gem 'pry-rails'
   gem 'dotenv-rails'

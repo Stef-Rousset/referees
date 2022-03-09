@@ -4,7 +4,7 @@
     <button class="btn-blue complete-qcm"> QCM complet chronométré</button>
     <div class="filters-questions hide-element">
       <h2>Filtrer les questions par</h2>
-      <%= form_with(url: questions_path(@questions), method: 'get', local: true, class: "questions-search-form") do %>
+      <%= form_with(url: questions_path, method: 'get', local: true, class: "questions-search-form") do %>
         <div class="questions-level-search">
           <h3>Niveau :</h3>
           <div class="questions-level-inputs">

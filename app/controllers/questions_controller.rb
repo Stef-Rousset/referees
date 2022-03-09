@@ -1,3 +1,5 @@
+require 'will_paginate/array' #needed to work with arrays
+
 class QuestionsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index]
   before_action :set_question, only: [:show, :edit, :update, :destroy]
@@ -6,6 +8,8 @@ class QuestionsController < ApplicationController
     @questions = policy_scope(Question).order(created_at: :desc)
     @questions = @questions.filter_by_level(params[:level]) if params[:level].present?
     @questions = @questions.filter_by_category(params[:category]) if params[:category].present?
+    @questions = @questions.shuffle
+    @questions = @questions.paginate(page: params[:page], per_page: 1)
   end
 
   def show
