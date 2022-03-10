@@ -1,6 +1,6 @@
 <div class="questions-index-container">
 <% @questions.each_with_index do |question, index| %>
-  <h3><%= @questions.length %> questions de niveau <%= question.level %>, catégorie <%= question.category %></h3>
+  <h3><%= @count %> questions de niveau <%= question.level %>, catégorie <%= question.category %></h3>
   <form data-index="<%= index %>" class="question-index-forms">
     <legend><%= question.statement %> :</legend>
     <label>
