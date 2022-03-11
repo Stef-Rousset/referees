@@ -11,6 +11,12 @@
   <%= f.input :prop_one, :label => "Réponse une" %>
   <%= f.input :prop_two, :label => "Réponse deux" %>
   <%= f.input :prop_three, :label => "Réponse trois" %>
+  <div class="edit-question-answer">
+    <%= f.simple_fields_for :answer do |a| %>
+      <%= a.input :good_prop, as: :radio_buttons, label: "Bonne réponse", collection: [["Réponse une", "un"], ["Réponse deux", "deux"], ["Réponse trois", "trois"]], _destroy: '1' %>
+      <%= a.input :explanation, label: "Explication de la réponse", _destroy: '1' %>
+    <% end %>
+  </div>
   <div class="edit-questions-links">
     <%= f.submit "Valider les modifications", class: "btn-blue submit-edit-question" %>
     <%= link_to "Annuler les modifications", :back, class: "btn-blue submit-edit-question" %>

@@ -35,6 +35,7 @@ class QuestionsController < ApplicationController
   end
 
   def edit
+    @answer = @question.answer
   end
 
   def update
@@ -58,6 +59,6 @@ class QuestionsController < ApplicationController
   end
 
   def question_params
-    params.require(:question).permit(:statement, :prop_one, :prop_two, :prop_three, :level, :category)
+    params.require(:question).permit(:statement, :prop_one, :prop_two, :prop_three, :level, :category, answer_attributes: [:id, :explanation, :good_prop])
   end
 end

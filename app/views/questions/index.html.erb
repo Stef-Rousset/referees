@@ -4,15 +4,15 @@
   <form data-index="<%= index %>" class="question-index-forms">
     <legend><%= question.statement %> :</legend>
     <label>
-      <input name="question" type="radio" >
+      <input name="question" type="radio" value="<%= question.prop_one %>">
       <%= question.prop_one %>
     </label>
     <label>
-      <input name="question" type="radio" >
+      <input name="question" type="radio" value="<%= question.prop_two %>">
       <%= question.prop_two %>
     </label>
     <label>
-      <input name="question" type="radio" >
+      <input name="question" type="radio" value="<%= question.prop_three %>">
       <%= question.prop_three %>
     </label>
     <button class="question-index-forms-submit btn-blue">Valider</button>
