@@ -1,0 +1,15 @@
+.questions-dashboard-container {
+  height: 40vh;
+  width: 100vw;
+}
+.dashboard-dep, .dashboard-reg {
+  width: 80%;
+  margin: auto;
+  margin-top: 2rem;
+  a {
+    color: lighten(black, 15%)
+  }
+  a:hover {
+    color: lighten(black, 35%)
+  }
+}

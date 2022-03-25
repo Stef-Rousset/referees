@@ -29,4 +29,8 @@ class QuestionPolicy < ApplicationPolicy
     record.user == user || user.admin?
   end
 
+  def dashboard?
+    user.contributor? || user.admin?
+  end
+
 end

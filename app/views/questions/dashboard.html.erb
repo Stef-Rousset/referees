@@ -1,0 +1,56 @@
+<div class="questions-dashboard-container">
+  <div class="dashboard-dep">
+    <h3>Niveau Départemental</h3>
+      <h4>Généralités</h4>
+        <% @questions_dep_g.each do |question| %>
+          <ul>
+              <li><%= link_to "#{question.statement}", question_path(question) %></li>
+          </ul>
+        <% end %>
+      <h4>Fleuret</h4>
+        <% @questions_dep_f.each do |question| %>
+          <ul>
+              <li><%= link_to "#{question.statement}", question_path(question) %></li>
+          </ul>
+        <% end %>
+      <h4>Épée</h4>
+        <% @questions_dep_e.each do |question| %>
+          <ul>
+              <li><%= link_to "#{question.statement}", question_path(question) %></li>
+          </ul>
+        <% end %>
+      <h4>Sabre</h4>
+        <% @questions_dep_s.each do |question| %>
+          <ul>
+              <li><%= link_to "#{question.statement}", question_path(question) %></li>
+          </ul>
+        <% end %>
+  </div>
+  <div class="dashboard-reg">
+    <h3>Niveau Régional</h3>
+      <h4>Généralités</h4>
+        <% @questions_reg_g.each do |question| %>
+          <ul>
+              <li><%= link_to "#{question.statement}", question_path(question) %></li>
+          </ul>
+        <% end %>
+      <h4>Fleuret</h4>
+        <% @questions_reg_f.each do |question| %>
+          <ul>
+              <li><%= link_to "#{question.statement}", question_path(question) %></li>
+          </ul>
+        <% end %>
+      <h4>Épée</h4>
+        <% @questions_reg_e.each do |question| %>
+          <ul>
+              <li><%= link_to "#{question.statement}", question_path(question) %></li>
+          </ul>
+        <% end %>
+      <h4>Sabre</h4>
+        <% @questions_reg_s.each do |question| %>
+          <ul>
+              <li><%= link_to "#{question.statement}", question_path(question) %></li>
+          </ul>
+        <% end %>
+  </div>
+</div>
