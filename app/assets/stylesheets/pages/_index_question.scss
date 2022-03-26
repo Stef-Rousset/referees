@@ -18,6 +18,9 @@
   align-self: center;
   margin: 1rem 0;
 }
+button[disabled='true']{
+  cursor: not-allowed;
+}
 .apple_pagination {
   text-align: center;
   padding: 1em;
@@ -48,4 +51,7 @@
       text-decoration: underline;
     }
   }
+}
+.hide-element {
+  display: none;
 }
