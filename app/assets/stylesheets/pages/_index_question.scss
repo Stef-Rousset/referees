@@ -14,7 +14,7 @@
     font-style: italic;
   }
 }
-.question-index-forms-submit {
+.question-index-form-submit {
   align-self: center;
   margin: 1rem 0;
 }
@@ -30,10 +30,11 @@ button[disabled='true']{
   }
   .disabled {
     color: #aaaaaa;
+    font-size: 1.2rem;
   }
   .current {
     font-style: normal;
-    font-weight: bold;
+    font-size: 1.2rem;
     background-color: darken(#f1f1f1, 20);
     display: inline-block;
     width: 1.4em;
@@ -54,4 +55,7 @@ button[disabled='true']{
 }
 .hide-element {
   display: none;
+}
+.question-index-answer {
+  margin-top: 1rem;
 }

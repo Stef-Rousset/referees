@@ -15,7 +15,7 @@
       <input name="question" type="radio" value="<%= question.prop_three %>" data-value="trois">
       <%= question.prop_three %>
     </label>
-    <button class="question-index-forms-submit btn-blue">Valider</button>
+    <button class="question-index-form-submit btn-blue" >Valider</button>
   </form>
   <div class="question-index-answer hide-element">
     <p class="answer-explanation" data-value="<%= question.answer.good_prop %>"><%= question.answer.explanation %></p>
@@ -23,41 +23,4 @@
 <% end %>
 <%= will_paginate @questions, class: "apple_pagination" %>
 </div>
-<script>
-  // const inputs = document.querySelectorAll('input');
-  // const btn = document.querySelector('.question-index-forms-submit');
-  // inputs.forEach(function(input){
-  //     input.addEventListener('click', function(){
-  //         btn.setAttribute('disabled', false);
-  //     })
-  // })
- const btn = document.querySelector('.question-index-forms-submit');
- let chosenProp;
- const inputs = document.querySelectorAll('input');
- inputs.forEach(function(input){
-      input.addEventListener('click', function(){
-          chosenProp = document.querySelector('input[name = "question"]:checked');
-      })
-  })
- const answerDiv = document.querySelector('.question-index-answer');
- const goodAnswer = document.querySelector('.answer-explanation');
- btn.addEventListener('click', function(event){
-      event.preventDefault();
-      if (chosenProp === undefined){
-        alert('Vous devez choisir une réponse avant de valider !');
-      }
-      else if (chosenProp.dataset.value === goodAnswer.dataset.value){
-         let p = document.createElement('p');
-         p.style.fontSize = '1.1rem';
-         answerDiv.prepend('Bonne réponse !', p);
-         answerDiv.classList.toggle('hide-element');
-         btn.classList.toggle('hide-element');
-       }
-       else {
-         let p = document.createElement('p');
-         answerDiv.prepend('Mauvaise réponse...', p);
-         answerDiv.classList.toggle('hide-element');
-         btn.classList.toggle('hide-element');
-       }
-   })
- </script>
+
