@@ -1,22 +1,25 @@
 <div class="questions-index-container">
-<% @questions.each_with_index do |question, index| %>
+<% @questions.each do |question| %>
   <h3><%= @count %> questions de niveau <%= question.level %>, catégorie <%= question.category %></h3>
-  <form data-index="<%= index %>" class="question-index-forms">
+  <form class="question-index-forms">
     <legend><%= question.statement %> :</legend>
     <label>
-      <input name="question" type="radio" >
+      <input name="question" type="radio" value="<%= question.prop_one %>" data-value="un">
       <%= question.prop_one %>
     </label>
     <label>
-      <input name="question" type="radio" >
+      <input name="question" type="radio" value="<%= question.prop_two %>" data-value="deux">
       <%= question.prop_two %>
     </label>
     <label>
-      <input name="question" type="radio" >
+      <input name="question" type="radio" value="<%= question.prop_three %>" data-value="trois">
       <%= question.prop_three %>
     </label>
-    <button class="question-index-forms-submit btn-blue">Valider</button>
+    <button class="question-index-form-submit btn-blue" >Valider</button>
   </form>
+  <div class="question-index-answer hide-element">
+    <p class="answer-explanation" data-value="<%= question.answer.good_prop %>"><%= question.answer.explanation %></p>
+  </div>
 <% end %>
 <%= will_paginate @questions, class: "apple_pagination" %>
 </div>

@@ -35,6 +35,7 @@ class QuestionsController < ApplicationController
   end
 
   def edit
+    @answer = @question.answer
   end
 
   def update
@@ -50,6 +51,19 @@ class QuestionsController < ApplicationController
     redirect_to root_path
   end
 
+  def dashboard
+    current_user.contributor? ? @questions = Question.where(user_id: current_user) : @questions = Question.all
+    @questions_dep_g = @questions.dep_g
+    @questions_dep_f = @questions.dep_f
+    @questions_dep_e = @questions.dep_e
+    @questions_dep_s = @questions.dep_e
+    @questions_reg_g = @questions.reg_g
+    @questions_reg_f = @questions.reg_f
+    @questions_reg_e = @questions.reg_e
+    @questions_reg_s = @questions.reg_e
+    authorize @questions
+  end
+
   private
 
   def set_question
@@ -58,6 +72,6 @@ class QuestionsController < ApplicationController
   end
 
   def question_params
-    params.require(:question).permit(:statement, :prop_one, :prop_two, :prop_three, :level, :category)
+    params.require(:question).permit(:statement, :prop_one, :prop_two, :prop_three, :level, :category, answer_attributes: [:id, :explanation, :good_prop])
   end
 end
