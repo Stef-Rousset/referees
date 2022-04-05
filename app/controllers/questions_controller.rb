@@ -56,7 +56,7 @@ class QuestionsController < ApplicationController
     @questions_dep_g = @questions.dep_g
     @questions_dep_f = @questions.dep_f
     @questions_dep_e = @questions.dep_e
-    @questions_dep_s = @questions.dep_e
+    @questions_dep_s = @questions.dep_s
     @questions_reg_g = @questions.reg_g
     @questions_reg_f = @questions.reg_f
     @questions_reg_e = @questions.reg_e
