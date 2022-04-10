@@ -2,6 +2,7 @@
   <div class="home-text">
     <button class="btn-blue select-questions"> Sélectionner des questions</button>
     <button class="btn-blue complete-qcm"> QCM complet chronométré</button>
+    <!-- au clic sur selectionner des questions -->
     <div class="filters-questions hide-element">
       <h2>Filtrer les questions par</h2>
       <%= form_with(url: questions_path, method: 'get', local: true, class: "questions-search-form") do %>
@@ -45,6 +46,7 @@
         </div>
       <% end %>
     </div>
+    <!-- au clic sur qcm complet -->
   </div>
 
 </div>

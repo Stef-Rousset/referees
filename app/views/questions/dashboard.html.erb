@@ -3,26 +3,26 @@
     <h3>Niveau Départemental</h3>
       <h4>Généralités</h4>
         <% @questions_dep_g.each do |question| %>
-          <ul>
-              <li><%= link_to "#{question.statement}", question_path(question) %></li>
+          <ul class="fa-ul">
+              <li><span class="fa-li"><i class="fas fa-check"></i></span><%= question.statement.first(80) %>...</li><%= link_to '<i class="fas fa-expand"></i>'.html_safe, question_path(question), title: "Voir" %>
           </ul>
         <% end %>
       <h4>Fleuret</h4>
         <% @questions_dep_f.each do |question| %>
-          <ul>
-              <li><%= link_to "#{question.statement}", question_path(question) %></li>
+          <ul class="fa-ul">
+              <li><span class="fa-li"><i class="fas fa-check"></i></span><%= question.statement.first(80) %>...</li><%= link_to '<i class="fas fa-expand"></i>'.html_safe, question_path(question), title: "Voir" %>
           </ul>
         <% end %>
       <h4>Épée</h4>
         <% @questions_dep_e.each do |question| %>
-          <ul>
-              <li><%= link_to "#{question.statement}", question_path(question) %></li>
+          <ul class="fa-ul">
+              <li><span class="fa-li"><i class="fas fa-check"></i></span><%= question.statement.first(80) %>...</li><%= link_to '<i class="fas fa-expand"></i>'.html_safe, question_path(question), title: "Voir" %>
           </ul>
         <% end %>
       <h4>Sabre</h4>
         <% @questions_dep_s.each do |question| %>
-          <ul>
-              <li><%= link_to "#{question.statement}", question_path(question) %></li>
+          <ul class="fa-ul">
+              <li><span class="fa-li"><i class="fas fa-check"></i></span><%= question.statement.first(80) %></li><%= link_to '<i class="fas fa-expand"></i>'.html_safe, question_path(question), title: "Voir" %>
           </ul>
         <% end %>
   </div>
@@ -30,26 +30,26 @@
     <h3>Niveau Régional</h3>
       <h4>Généralités</h4>
         <% @questions_reg_g.each do |question| %>
-          <ul>
-              <li><%= link_to "#{question.statement}", question_path(question) %></li>
+          <ul class="fa-ul">
+              <li><span class="fa-li"><i class="fas fa-check"></i></span><%= question.statement.first(80) %>...</li><%= link_to '<i class="fas fa-expand"></i>'.html_safe, question_path(question), title: "Voir" %>
           </ul>
         <% end %>
       <h4>Fleuret</h4>
         <% @questions_reg_f.each do |question| %>
-          <ul>
-              <li><%= link_to "#{question.statement}", question_path(question) %></li>
+          <ul class="fa-ul">
+              <li><span class="fa-li"><i class="fas fa-check"></i></span><%= question.statement.first(80) %>...</li><%= link_to '<i class="fas fa-expand"></i>'.html_safe, question_path(question), title: "Voir" %>
           </ul>
         <% end %>
       <h4>Épée</h4>
         <% @questions_reg_e.each do |question| %>
-          <ul>
-              <li><%= link_to "#{question.statement}", question_path(question) %></li>
+          <ul class="fa-ul">
+              <li><span class="fa-li"><i class="fas fa-check"></i></span><%= question.statement.first(80) %>...</li><%= link_to '<i class="fas fa-expand"></i>'.html_safe, question_path(question), title: "Voir" %>
           </ul>
         <% end %>
       <h4>Sabre</h4>
         <% @questions_reg_s.each do |question| %>
-          <ul>
-              <li><%= link_to "#{question.statement}", question_path(question) %></li>
+          <ul class="fa-ul">
+              <li><span class="fa-li"><i class="fas fa-check"></i></span><%= question.statement.first(80) %>...</li><%= link_to '<i class="fas fa-expand"></i>'.html_safe, question_path(question), title: "Voir" %>
           </ul>
         <% end %>
   </div>

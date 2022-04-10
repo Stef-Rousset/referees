@@ -12,10 +12,16 @@
     font-style: italic;
     text-align: justify;
   }
+}
+.show_question-bottom-links {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 2rem;
   a {
-    margin-top: 2rem;
-    align-self: center;
+    width: 8rem;
+    text-align: center;
   }
+
 }
 .question-content {
   width: 100%;
