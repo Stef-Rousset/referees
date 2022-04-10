@@ -1,0 +1,33 @@
+.references-container {
+  height: 40vh;
+  width: 100vw;
+  margin-bottom: 2rem;
+}
+.references-text {
+  display: flex;
+  flex-direction: column;
+  width: 65%;
+  margin: auto;
+  align-items: flex-start;
+  height: 100%;
+  margin-top: 2rem;
+  h3 {
+    margin-top: 2rem;
+  }
+  a {
+    color: $dark-blue;
+    font-size: 1.2rem;
+    text-decoration: none;
+    font-family: $body-font;
+    &:hover {
+      text-decoration: none;
+      opacity: 0.8;
+    }
+  }
+}
+.fa-check {
+  font-size: 0.8rem;
+}
+.references-last-li {
+  margin-bottom: 2rem;
+}

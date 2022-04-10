@@ -8,6 +8,9 @@
     </ul>
   <h4 class="question-answer-content">La bonne réponse est la réponse <%= @question.answer.good_prop %>.</h4>
   <p><%= @question.answer.explanation %>.</p>
-  <%= link_to "Modifier",  edit_question_path(@question), class: "btn-blue" %>
+  <div class="show_question-bottom-links">
+    <%= link_to "Modifier",  edit_question_path(@question), class: "btn-blue" %>
+    <%= link_to "Supprimer", question_path(@question), method: :delete, data: { confirm: "Are you sure?" }, class: "btn-blue" %>
+  </div>
 </div>
 

@@ -3,13 +3,23 @@
   width: 100vw;
 }
 .dashboard-dep, .dashboard-reg {
-  width: 80%;
+  width: 60%;
   margin: auto;
   margin-top: 2rem;
   a {
     color: lighten(black, 15%)
   }
   a:hover {
-    color: lighten(black, 35%)
+    color: lighten(black, 35%);
+    transform: scale(1.2)
+  }
+  ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .fa-check {
+      font-size: 0.75rem;
+    }
   }
 }
+
