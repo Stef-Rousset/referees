@@ -1,0 +1,12 @@
+<div class="qcm-container" role="main">
+    <h2>Qcm <%= @level == "départemental" ? 'départemental' : 'régional' %>
+     spécifique
+     <% if @category == "fleuret" %>
+      fleuret
+     <% elsif @category == "épée" %>
+      épée
+      <% else %>
+      sabre
+      <% end %>
+    </h2>
+</div>

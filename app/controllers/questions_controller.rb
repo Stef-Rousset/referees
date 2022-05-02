@@ -12,6 +12,14 @@ class QuestionsController < ApplicationController
     @questions = @questions.paginate(page: params[:page], per_page: 1)
   end
 
+  def qcm
+    @level = params[:level]
+    @category = params[:category]
+    @questions = policy_scope(Question)
+    @questions_generales = @questions.filter_by_level(params[:level]).shuffle.first(2) if @level.present?
+    @questions_specifiques = @questions.filter_by_category(params[:category]).shuffle.first(2) if @category.present?
+  end
+
   def show
   end
 
@@ -60,7 +68,7 @@ class QuestionsController < ApplicationController
     @questions_reg_g = @questions.reg_g
     @questions_reg_f = @questions.reg_f
     @questions_reg_e = @questions.reg_e
-    @questions_reg_s = @questions.reg_e
+    @questions_reg_s = @questions.reg_s
     authorize @questions
   end
 

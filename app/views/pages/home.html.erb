@@ -47,6 +47,45 @@
       <% end %>
     </div>
     <!-- au clic sur qcm complet -->
+    <div class="filters-questions-qcm hide-element">
+      <h2>Filtrer les questions par</h2>
+      <%= form_with(url: qcm_path, method: 'get', local: true, class: "questions-search-form") do %>
+        <div class="questions-level-search">
+          <h3>Niveau :</h3>
+          <div class="questions-level-inputs">
+            <div class="level-choice">
+              <%= label_tag "questions-level-dep", 'Départemental' %>
+              <%= radio_button_tag(:level, "départemental") %>
+            </div>
+            <div class="level-choice">
+              <%= label_tag "questions-level-reg", 'Régional' %>
+              <%= radio_button_tag(:level, "régional") %>
+            </div>
+          </div>
+        </div>
+        <div class="questions-category-search">
+          <h3>Catégorie :</h3>
+          <div class="questions-category-inputs">
+            <div class="category-choice">
+              <%= label_tag "questions-category-fleuret", 'Spécifique fleuret' %>
+              <%= radio_button_tag(:category, "fleuret") %>
+            </div>
+            <div class="category-choice">
+              <%= label_tag "questions-category-epee", 'Spécifique épée' %>
+              <%= radio_button_tag(:category, "épée") %>
+            </div>
+            <div class="category-choice">
+              <%= label_tag "questions-category-sabre", 'Spécifique sabre' %>
+              <%= radio_button_tag(:category, "sabre") %>
+            </div>
+          </div>
+        </div>
+        <div class="filters-buttons">
+          <%= submit_tag 'Commencer le qcm', class: 'btn-blue' %>
+          <a href="#" class='btn-blue'><i class="fas fa-backward"></i></a>
+        </div>
+      <% end %>
+    </div>
   </div>
 
 </div>
