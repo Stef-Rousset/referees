@@ -1,7 +1,7 @@
 require 'will_paginate/array' #needed to work with arrays
 
 class QuestionsController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:index]
+  skip_before_action :authenticate_user!, only: [:index, :qcm]
   before_action :set_question, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -16,8 +16,8 @@ class QuestionsController < ApplicationController
     @level = params[:level]
     @category = params[:category]
     @questions = policy_scope(Question)
-    @questions_generales = @questions.filter_by_level(params[:level]).shuffle.first(2) if @level.present?
-    @questions_specifiques = @questions.filter_by_category(params[:category]).shuffle.first(2) if @category.present?
+    @questions_generales = @questions.filter_by_level(params[:level]).where(category: 1).shuffle.first(2) if @level.present?
+    @questions_specifiques = @questions.filter_by_level(params[:level]).filter_by_category(params[:category]).shuffle.first(2) if @level.present? && @category.present?
   end
 
   def show

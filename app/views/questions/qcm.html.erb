@@ -9,4 +9,45 @@
       sabre
       <% end %>
     </h2>
+    <div class="qcm-general-questions">
+      <h3>Questions générales</h3>
+        <% @questions_generales.each_with_index do |question, index| %>
+          <form class="question-qcm-forms">
+            <legend><%= question.statement %> :</legend>
+            <label>
+              <input name="question-general-<%= index %>" type="radio" value="<%= question.prop_one %>" data-value="un">
+              <%= question.prop_one %>
+            </label>
+            <label>
+              <input name="question-general-<%= index %>" type="radio" value="<%= question.prop_two %>" data-value="deux">
+              <%= question.prop_two %>
+            </label>
+            <label>
+              <input name="question-general-<%= index %>" type="radio" value="<%= question.prop_three %>" data-value="trois">
+              <%= question.prop_three %>
+            </label>
+          </form>
+        <% end %>
+    </div>
+    <div class="qcm-specific-questions">
+      <h3>Question spécifiques</h3>
+          <% @questions_specifiques.each_with_index do |question, index| %>
+            <form class="question-qcm-forms">
+              <legend><%= question.statement %> :</legend>
+              <label>
+                <input name="question-specific-<%= index %>" type="radio" value="<%= question.prop_one %>" data-value="un">
+                <%= question.prop_one %>
+              </label>
+              <label>
+                <input name="question-specific-<%= index %>" type="radio" value="<%= question.prop_two %>" data-value="deux">
+                <%= question.prop_two %>
+              </label>
+              <label>
+                <input name="question-specific-<%= index %>" type="radio" value="<%= question.prop_three %>" data-value="trois">
+                <%= question.prop_three %>
+              </label>
+            </form>
+        <% end %>
+    </div>
+    <button class="question-qcm-form-submit btn-blue" >Valider</button>
 </div>

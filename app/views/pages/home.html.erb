@@ -41,14 +41,14 @@
           </div>
         </div>
         <div class="filters-buttons">
-          <%= submit_tag 'Commencer', class: 'btn-blue' %>
+          <%= submit_tag 'Commencer', class: 'btn-blue not-allowed' %>
           <a href="#" class='btn-blue'><i class="fas fa-backward"></i></a>
         </div>
       <% end %>
     </div>
     <!-- au clic sur qcm complet -->
     <div class="filters-questions-qcm hide-element">
-      <h2>Filtrer les questions par</h2>
+      <h2>Choix du type de QCM</h2>
       <%= form_with(url: qcm_path, method: 'get', local: true, class: "questions-search-form") do %>
         <div class="questions-level-search">
           <h3>Niveau :</h3>
@@ -81,12 +81,11 @@
           </div>
         </div>
         <div class="filters-buttons">
-          <%= submit_tag 'Commencer le qcm', class: 'btn-blue' %>
+          <%= submit_tag 'Commencer le qcm', class: 'btn-blue not-allowed' %>
           <a href="#" class='btn-blue'><i class="fas fa-backward"></i></a>
         </div>
       <% end %>
     </div>
   </div>
-
 </div>
 
