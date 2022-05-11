@@ -41,7 +41,7 @@
           </div>
         </div>
         <div class="filters-buttons">
-          <%= submit_tag 'Commencer', class: 'btn-blue not-allowed' %>
+          <%= submit_tag 'Commencer', class: 'btn-blue submit-questions-choice not-allowed' %>
           <a href="#" class='btn-blue'><i class="fas fa-backward"></i></a>
         </div>
       <% end %>
@@ -66,22 +66,22 @@
         <div class="questions-category-search">
           <h3>Catégorie :</h3>
           <div class="questions-category-inputs">
-            <div class="category-choice">
-              <%= label_tag "questions-category-fleuret", 'Spécifique fleuret' %>
+            <div class="category-choice-qcm">
+              <%= label_tag "questions-category-fleuret", 'Fleuret' %>
               <%= radio_button_tag(:category, "fleuret") %>
             </div>
-            <div class="category-choice">
-              <%= label_tag "questions-category-epee", 'Spécifique épée' %>
+            <div class="category-choice-qcm">
+              <%= label_tag "questions-category-epee", 'Épée' %>
               <%= radio_button_tag(:category, "épée") %>
             </div>
-            <div class="category-choice">
-              <%= label_tag "questions-category-sabre", 'Spécifique sabre' %>
+            <div class="category-choice-qcm">
+              <%= label_tag "questions-category-sabre", 'Sabre' %>
               <%= radio_button_tag(:category, "sabre") %>
             </div>
           </div>
         </div>
         <div class="filters-buttons">
-          <%= submit_tag 'Commencer le qcm', class: 'btn-blue not-allowed' %>
+          <%= submit_tag 'Commencer le qcm', class: 'btn-blue submit-qcm-choice not-allowed' %>
           <a href="#" class='btn-blue'><i class="fas fa-backward"></i></a>
         </div>
       <% end %>
