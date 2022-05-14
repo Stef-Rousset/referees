@@ -36,8 +36,8 @@ const homePageButtons = () => {
           })
       })
   }
-  // au clic sur le btn Selectionner des questions, montrer le form de choix du level&&category
-  // et cacher le btn qcm
+  // au clic sur le btn Selectionner des questions, montrer le form de choix du
+  // level&&category et cacher le btn qcm
   if (selectButton) {
       selectButton.addEventListener('click', function(){
         filterDiv.classList.toggle('hide-element');

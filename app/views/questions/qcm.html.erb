@@ -12,18 +12,18 @@
     <div class="qcm-general-questions">
       <h3>Questions générales</h3>
         <% @questions_generales.each_with_index do |question, index| %>
-          <form class="question-qcm-forms">
+          <form class="question-qcm-forms-general" data-index="<%= index %>" data-good-answer="<%= question.answer.good_prop %>">
             <legend><%= question.statement %> :</legend>
             <label>
-              <input name="question-general-<%= index %>" type="radio" value="<%= question.prop_one %>" data-value="un">
+              <input name="question-general-<%= index %>" type="radio" value="un">
               <%= question.prop_one %>
             </label>
             <label>
-              <input name="question-general-<%= index %>" type="radio" value="<%= question.prop_two %>" data-value="deux">
+              <input name="question-general-<%= index %>" type="radio" value="deux">
               <%= question.prop_two %>
             </label>
             <label>
-              <input name="question-general-<%= index %>" type="radio" value="<%= question.prop_three %>" data-value="trois">
+              <input name="question-general-<%= index %>" type="radio" value="trois">
               <%= question.prop_three %>
             </label>
           </form>
@@ -32,18 +32,18 @@
     <div class="qcm-specific-questions">
       <h3>Question spécifiques</h3>
           <% @questions_specifiques.each_with_index do |question, index| %>
-            <form class="question-qcm-forms">
+            <form class="question-qcm-forms-specific" data-index="<%= index %>" data-good-answer="<%= question.answer.good_prop %>">
               <legend><%= question.statement %> :</legend>
               <label>
-                <input name="question-specific-<%= index %>" type="radio" value="<%= question.prop_one %>" data-value="un">
+                <input name="question-specific-<%= index %>" type="radio" value="un">
                 <%= question.prop_one %>
               </label>
               <label>
-                <input name="question-specific-<%= index %>" type="radio" value="<%= question.prop_two %>" data-value="deux">
+                <input name="question-specific-<%= index %>" type="radio" value="deux">
                 <%= question.prop_two %>
               </label>
               <label>
-                <input name="question-specific-<%= index %>" type="radio" value="<%= question.prop_three %>" data-value="trois">
+                <input name="question-specific-<%= index %>" type="radio" value="trois">
                 <%= question.prop_three %>
               </label>
             </form>
@@ -51,3 +51,4 @@
     </div>
     <button class="question-qcm-form-submit btn-blue" >Valider les réponses</button>
 </div>
+
