@@ -1,5 +1,5 @@
 <div class="qcm-container" role="main">
-    <h2>Qcm <%= @level == "départemental" ? 'départemental' : 'régional' %>
+    <h2 class="qcm-title" data-level="<%= @level %>">Qcm <%= @level == "départemental" ? 'départemental' : 'régional' %>
      spécifique
      <% if @category == "fleuret" %>
       fleuret
@@ -27,6 +27,9 @@
               <%= question.prop_three %>
             </label>
           </form>
+          <div class="answer-qcm-question hide-element">
+            <p><%=  question.answer.explanation %></p>
+          </div>
         <% end %>
     </div>
     <div class="qcm-specific-questions">
@@ -47,8 +50,31 @@
                 <%= question.prop_three %>
               </label>
             </form>
+            <div class="answer-qcm-question hide-element">
+              <p><%= question.answer.explanation %></p>
+            </div>
         <% end %>
     </div>
-    <button class="question-qcm-form-submit btn-blue" >Valider les réponses</button>
+    <button class="question-qcm-form-submit btn-blue" data-bs-toggle="modal" data-bs-target="#result_modal">Valider les réponses</button>
+    <!-- Lien de retour à l'accueil quand le user a regardé la correction du qcm -->
+    <a href="/" class="question-qcm-homepage-return btn-blue hide-element">Retour à l'accueil</a>
 </div>
+<!-- Modal avec le resultat du qcm -->
+<div class="modal fade" id="result_modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Résultat</h5>
+      <!--  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
+      </div>
+      <div class="modal-body">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary correction-qcm" data-bs-dismiss="modal">Voir la correction du QCM</button>
+        <button type="button" class="btn btn-primary homepage-qcm" data-bs-dismiss="modal">Retour à la page d'accueil</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 

@@ -16,8 +16,15 @@ class QuestionsController < ApplicationController
     @level = params[:level]
     @category = params[:category]
     @questions = policy_scope(Question)
-    @questions_generales = @questions.filter_by_level(params[:level]).where(category: 1).shuffle.first(2) if @level.present?
-    @questions_specifiques = @questions.filter_by_level(params[:level]).filter_by_category(params[:category]).shuffle.first(2) if @level.present? && @category.present?
+    @questions_generales = @questions.filter_by_level(params[:level]).where(category: 1).shuffle if @level.present?
+    @questions_specifiques = @questions.filter_by_level(params[:level]).filter_by_category(params[:category]).shuffle if @level.present? && @category.present?
+    if @level == 'départemental'
+      @questions_generales = @questions_generales.first(12)
+      @questions_specifiques = @questions_specifiques.first(8)
+    else
+      @questions_generales = @questions_generales.first(20)
+      @questions_specifiques = @questions_specifiques.first(10)
+    end
   end
 
   def show

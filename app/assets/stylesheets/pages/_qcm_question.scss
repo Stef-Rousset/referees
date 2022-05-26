@@ -21,8 +21,20 @@
     font-style: italic;
   }
 }
-.question-qcm-form-submit {
+.question-qcm-form-submit, .question-qcm-homepage-return {
   width: 30%;
   align-self: center;
   margin-top: 2rem;
 }
+.question-qcm-homepage-return {
+  text-decoration: none;
+    text-align: center;
+}
+.answer-qcm-question {
+  font-style: italic;
+  text-align: justify;
+}
+.hide-element {
+  display: none;
+}
+
