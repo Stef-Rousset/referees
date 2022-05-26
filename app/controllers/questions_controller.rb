@@ -1,7 +1,7 @@
 require 'will_paginate/array' #needed to work with arrays
 
 class QuestionsController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:index]
+  skip_before_action :authenticate_user!, only: [:index, :qcm]
   before_action :set_question, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -10,6 +10,21 @@ class QuestionsController < ApplicationController
     @questions = @questions.filter_by_category(params[:category]) if params[:category].present?
     @count = @questions.length
     @questions = @questions.paginate(page: params[:page], per_page: 1)
+  end
+
+  def qcm
+    @level = params[:level]
+    @category = params[:category]
+    @questions = policy_scope(Question)
+    @questions_generales = @questions.filter_by_level(params[:level]).where(category: 1).shuffle if @level.present?
+    @questions_specifiques = @questions.filter_by_level(params[:level]).filter_by_category(params[:category]).shuffle if @level.present? && @category.present?
+    if @level == 'départemental'
+      @questions_generales = @questions_generales.first(12)
+      @questions_specifiques = @questions_specifiques.first(8)
+    else
+      @questions_generales = @questions_generales.first(20)
+      @questions_specifiques = @questions_specifiques.first(10)
+    end
   end
 
   def show
@@ -60,7 +75,7 @@ class QuestionsController < ApplicationController
     @questions_reg_g = @questions.reg_g
     @questions_reg_f = @questions.reg_f
     @questions_reg_e = @questions.reg_e
-    @questions_reg_s = @questions.reg_e
+    @questions_reg_s = @questions.reg_s
     authorize @questions
   end
 
