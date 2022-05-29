@@ -33,6 +33,10 @@
 .answer-qcm-question {
   font-style: italic;
   text-align: justify;
+  margin-top: 1rem;
+  p {
+    margin-bottom: 0.5rem;
+  }
 }
 .hide-element {
   display: none;

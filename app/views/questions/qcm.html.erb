@@ -26,33 +26,35 @@
               <input name="question-general-<%= index %>" type="radio" value="trois">
               <%= question.prop_three %>
             </label>
+            <div class="answer-qcm-question hide-element">
+              <p class="hide-element">La bonne réponse est la réponse <%= question.answer.good_prop %>.</p>
+              <p><%=  question.answer.explanation %>.</p>
+            </div>
           </form>
-          <div class="answer-qcm-question hide-element">
-            <p><%=  question.answer.explanation %></p>
-          </div>
         <% end %>
     </div>
     <div class="qcm-specific-questions">
       <h3>Question spécifiques</h3>
-          <% @questions_specifiques.each_with_index do |question, index| %>
-            <form class="question-qcm-forms-specific" data-index="<%= index %>" data-good-answer="<%= question.answer.good_prop %>">
-              <legend><%= question.statement %> :</legend>
-              <label>
-                <input name="question-specific-<%= index %>" type="radio" value="un">
-                <%= question.prop_one %>
-              </label>
-              <label>
-                <input name="question-specific-<%= index %>" type="radio" value="deux">
-                <%= question.prop_two %>
-              </label>
-              <label>
-                <input name="question-specific-<%= index %>" type="radio" value="trois">
-                <%= question.prop_three %>
-              </label>
-            </form>
+        <% @questions_specifiques.each_with_index do |question, index| %>
+          <form class="question-qcm-forms-specific" data-index="<%= index %>" data-good-answer="<%= question.answer.good_prop %>">
+            <legend><%= question.statement %> :</legend>
+            <label>
+              <input name="question-specific-<%= index %>" type="radio" value="un">
+              <%= question.prop_one %>
+            </label>
+            <label>
+              <input name="question-specific-<%= index %>" type="radio" value="deux">
+              <%= question.prop_two %>
+            </label>
+            <label>
+              <input name="question-specific-<%= index %>" type="radio" value="trois">
+              <%= question.prop_three %>
+            </label>
             <div class="answer-qcm-question hide-element">
-              <p><%= question.answer.explanation %></p>
+              <p class="hide-element">La bonne réponse est la réponse <%= question.answer.good_prop %>.</p>
+              <p><%= question.answer.explanation %>.</p>
             </div>
+          </form>
         <% end %>
     </div>
     <button class="question-qcm-form-submit btn-blue" data-bs-toggle="modal" data-bs-target="#result_modal">Valider les réponses</button>
@@ -65,9 +67,9 @@
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel">Résultat</h5>
-      <!--  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
       </div>
       <div class="modal-body">
+        <!-- Ajout du texte en JS -->
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary correction-qcm" data-bs-dismiss="modal">Voir la correction du QCM</button>

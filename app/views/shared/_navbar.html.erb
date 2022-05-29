@@ -12,7 +12,7 @@
     </button>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto">
+      <ul id="login-signup" class="navbar-nav me-auto">
         <% if user_signed_in? && (current_user.admin? || current_user.contributor?) %>
             <li class="nav-item dropdown">
               <%= image_tag "halte.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>

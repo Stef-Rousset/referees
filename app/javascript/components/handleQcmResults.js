@@ -7,6 +7,7 @@ const handleQcmResults = () => {
       const modalBody = document.querySelector('.modal-body')
       const level = document.querySelector('.qcm-title').dataset.level
       const answers = document.querySelectorAll('.answer-qcm-question')
+      const goodAnswersAre = document.querySelectorAll('.good-answer-is')
       const homePageLink = document.querySelector('.question-qcm-homepage-return')
 
       submitButton.addEventListener('click', function(event){
@@ -62,13 +63,21 @@ const handleQcmResults = () => {
           })
           // au clic sur le btn voir correction, on affiche les div d'explications
           // et on passe les mauvaises réponses en rouge et les bonnes en vert
+          // si mauvaise reponse, on affiche le p qui indique la bonne reponse
           // on cache le btn valider les reponses et on display le lien retour accueil
           correctionButton.addEventListener('click', function(){
-            answers.forEach(answer => answer.classList.toggle('hide-element'))
-            document.querySelectorAll('.green').forEach(elem => elem.parentElement.style.color = "green")
-            document.querySelectorAll('.red').forEach(elem => elem.parentElement.style.color = "red")
-            submitButton.classList.toggle('hide-element')
-            homePageLink.classList.toggle('hide-element')
+              const inputs = document.querySelectorAll('input')
+              document.querySelectorAll('.green').forEach(elem => elem.parentElement.style.color = "green")
+              document.querySelectorAll('.red').forEach(elem => elem.parentElement.style.color = "red")
+              answers.forEach(answer => answer.classList.toggle('hide-element'))
+              inputs.forEach(function(input){
+                  if (input.classList.contains('red')){
+                    // on recup le p qui donne la bonne reponse
+                    input.parentElement.parentElement.lastElementChild.firstElementChild.classList.toggle('hide-element')
+                  }
+              })
+              submitButton.classList.toggle('hide-element')
+              homePageLink.classList.toggle('hide-element')
           })
       })
   }

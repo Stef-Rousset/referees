@@ -27,6 +27,7 @@ import "bootstrap"
 import { homePageButtons } from '../components/homePageButtons';
 import { handleValidateQuestion } from '../components/handleValidateQuestion';
 import { handleQcmResults } from '../components/handleQcmResults';
+import { secretCode } from '../components/secretCode';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
@@ -34,4 +35,5 @@ document.addEventListener('turbolinks:load', () => {
   homePageButtons();
   handleValidateQuestion();
   handleQcmResults();
+  secretCode();
 });
