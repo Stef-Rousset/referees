@@ -5,18 +5,19 @@ body {
 .main-container {
   height: 80vh;
   overflow: scroll;
+  background-color: $light-gray;
 }
 h1 {
-  font-size: 1.8rem;
+  font-size: 1.8rem !important; // contrer le style bootstrap
 }
 h2 {
-  font-size: 1.5rem;
+  font-size: 1.5rem !important;
 }
 h3 {
-  font-size: 1.3rem;
+  font-size: 1.3rem !important;
 }
 h4 {
-  font-size: 1.2rem;
+  font-size: 1.2rem !important;
 }
 h1, h2, h3, h4 {
   font-weight: bold;
@@ -24,28 +25,29 @@ h1, h2, h3, h4 {
   color: $dark-blue;
 }
 p, label, li {
-  font-size: 1.1rem;
+  font-size: 1.1rem !important;
   font-family: $body-font;
 }
 a {
-  font-size: 1.2rem;
+  font-size: 1.1rem !important;
   text-decoration: none;
   font-family: $body-font;
-  text-decoration: none;
+  text-decoration: none !important;
   &:hover {
-    text-decoration: none;
+    text-decoration: none !important;
+    color: darken(white, 20%) !important;
   }
 }
 .btn-blue {
   color: white;
   background-color: $dark-blue;
-  font-size: 1.1rem;
+  font-size: 1.1rem !important;
   font-family: $body-font;
   padding: 0.3rem;
   border-radius: 0.2rem;
   border-width: 0;
   border-style: none;
   &:hover{
-    color: darken(white, 20%)
+    color: darken(white, 20%);
   }
 }

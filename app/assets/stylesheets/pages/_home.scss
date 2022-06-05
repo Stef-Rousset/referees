@@ -20,7 +20,7 @@
 }
 .questions-search-form {
   margin-top: 1rem;
-  height: 100%;
+  height: auto;
 }
 .questions-level-search, .questions-category-search {
   display: flex;
@@ -63,3 +63,48 @@
 .hide-element {
   display: none;
 }
+// responsive with bootstrap breakpoints
+// xs devices (portrait phones less than 576 px)
+@media (max-width: 575.98px) {
+  .home-text {
+    width: 95%;
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+  .filters-questions, .filters-questions-qcm {
+    label {
+      font-size: 0.9rem !important;
+    }
+  }
+}
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .home-text {
+    width: 95%;
+  }
+}
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .home-text {
+    width: 85%;
+  }
+  .filters-questions, .filters-questions-qcm {
+    margin-top: 2rem;
+  }
+    label {
+      font-size: 1.2rem !important;
+    }
+  .filters-buttons {
+    margin-top: 2rem;
+  }
+}
+// Large devices (desktops, 992px and up)
+//@media (min-width: 992px) {
+//}
+// X-Large devices (large desktops, 1200px and up)
+//@media (min-width: 1200px) {
+//}
+// XX-Large devices (larger desktops, 1400px and up)
+//@media (min-width: 1400px) {
+//}
+

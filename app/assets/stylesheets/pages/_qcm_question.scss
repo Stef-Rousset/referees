@@ -41,4 +41,11 @@
 .hide-element {
   display: none;
 }
+// responsive with bootstrap breakpoints
+// from xs devices to medium devices
+@media (max-width: 991.98px) {
+  .qcm-container {
+    width: 90%;
+  }
+}
 

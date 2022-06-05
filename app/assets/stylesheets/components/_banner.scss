@@ -12,7 +12,9 @@
 .banner-img {
   width: 60%;
   height: auto;
-  background: linear-gradient(to right, rgba(0,0,0,0.3),rgba(0,0,0,0.1));
+  background-image: linear-gradient(to right, rgba(0,0,0,0.2),rgba(0,0,0,0.1)), url('banner.png');
+  background-size: contain;
+  background-position: left;
 }
 .banner-text {
   display: flex;
@@ -34,3 +36,32 @@
   justify-content: space-between;
   height: 25%;
 }
+// responsive
+// xs devices (portrait phones less than 576 px)
+@media (max-width: 575.98px) {
+  .banner-img {
+    display: none;
+  }
+  .banner-text {
+    width: 100%;
+  }
+}
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .banner-img {
+    display: none;
+  }
+  .banner-text {
+    width: 100%;
+  }
+  .banner-second-title {
+    margin-bottom: 0.5rem;
+  }
+}
+// Medium devices and X-Large devices
+@media (min-width: 768px) and (max-width: 1199.98px) {
+  .banner-img {
+    background-size: cover;
+  }
+}
+
