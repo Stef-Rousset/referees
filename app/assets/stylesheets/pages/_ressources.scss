@@ -1,9 +1,9 @@
-.references-container {
+.ressources-container {
   height: 40vh;
   width: 100vw;
   margin-bottom: 2rem;
 }
-.references-text {
+.ressources-text {
   display: flex;
   flex-direction: column;
   width: 65%;
@@ -23,11 +23,27 @@
       text-decoration: none;
       opacity: 0.8;
     }
+    &:visited {
+      color: $dark-blue;
+    }
   }
 }
 .fa-check {
   font-size: 0.8rem;
 }
-.references-last-li {
+.ressources-last-li {
   margin-bottom: 2rem;
+}
+// responsive
+//XS and Small devices
+@media (max-width: 991.98px) {
+  .ressources-text {
+    width: 90%;
+  }
+}
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) and (max-width: 991.98px){
+  .ressources-text {
+    width: 80%;
+  }
 }
