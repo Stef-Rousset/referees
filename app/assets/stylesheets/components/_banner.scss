@@ -12,9 +12,9 @@
 .banner-img {
   width: 60%;
   height: auto;
-  background-image: linear-gradient(to right, rgba(0,0,0,0.2),rgba(0,0,0,0.1)), url('banner.jpg');
-  background-size: cover;
-  background-position: center;
+  background-image: linear-gradient(to right, rgba(0,0,0,0.2),rgba(0,0,0,0.1)), url('banner.png');
+  background-size: contain;
+  background-position: left;
 }
 .banner-text {
   display: flex;
@@ -58,15 +58,10 @@
     margin-bottom: 0.5rem;
   }
 }
-// Medium devices (tablets, 768px and up)
-@media (min-width: 768px) {
+// Medium devices and X-Large devices
+@media (min-width: 768px) and (max-width: 1199.98px) {
+  .banner-img {
+    background-size: cover;
+  }
 }
-// Large devices (desktops, 992px and up)
-@media (min-width: 992px) {
-}
-// X-Large devices (large desktops, 1200px and up)
-@media (min-width: 1200px) {
-}
-// XX-Large devices (larger desktops, 1400px and up)
-@media (min-width: 1400px) {
-}
+
