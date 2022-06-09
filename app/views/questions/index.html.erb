@@ -18,7 +18,8 @@
     <button class="question-index-form-submit btn-blue" >Valider</button>
   </form>
   <div class="question-index-answer hide-element">
-    <p class="answer-explanation" data-value="<%= question.answer.good_prop %>"><%= question.answer.explanation %></p>
+    <p class="right-answer hide-element">La bonne réponse est la réponse <%= question.answer.good_prop %>.</p>
+    <p class="answer-explanation" data-value="<%= question.answer.good_prop %>"><%= question.answer.explanation %>.</p>
   </div>
 <% end %>
 <%= will_paginate @questions, class: "apple_pagination" %>
