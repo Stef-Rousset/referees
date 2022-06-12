@@ -65,6 +65,7 @@ const handleQcmResults = () => {
           // et on passe les mauvaises réponses en rouge et les bonnes en vert
           // si mauvaise reponse, on affiche le p qui indique la bonne reponse
           // on cache le btn valider les reponses et on display le lien retour accueil
+          // on scroll au début du qcm
           correctionButton.addEventListener('click', function(){
               const inputs = document.querySelectorAll('input')
               document.querySelectorAll('.green').forEach(elem => elem.parentElement.style.color = "green")
@@ -78,6 +79,7 @@ const handleQcmResults = () => {
               })
               submitButton.classList.toggle('hide-element')
               homePageLink.classList.toggle('hide-element')
+              document.querySelector('.main-container').scrollTop = 0
           })
       })
   }
