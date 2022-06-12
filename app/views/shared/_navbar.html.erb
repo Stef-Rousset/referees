@@ -14,14 +14,14 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul id="login-signup" class="navbar-nav me-auto">
         <% if user_signed_in? && (current_user.admin? || current_user.contributor?) %>
-            <li class="nav-item dropdown">
-              <%= image_tag "halte.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-              <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                <%= link_to "Ajouter une question", new_question_path, class: "dropdown-item" %>
-                <%= link_to "Voir mes questions", dashboard_path, class: "dropdown-item" %>
-                <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
-              </div>
-            </li>
+            <!-- <li class="nav-item dropdown"> -->
+              <%#= image_tag "halte.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+              <!-- <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown"> -->
+                <%= link_to "Ajouter une question", new_question_path, class: "nav-link" %>
+                <%= link_to "Voir mes questions", dashboard_path, class: "nav-link" %>
+                <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "nav-link" %>
+             <!--  </div> -->
+            <!-- </li> -->
         <% else %>
           <li class="nav-item">
             <%= link_to "Login", new_user_session_path, class: "nav-link" %>
