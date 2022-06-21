@@ -18,7 +18,8 @@ const handleQcmResults = () => {
           let resultSpe;
           let total;
           // on ajoute 1 ds arrayGeneral à chq bonne reponse pr la partie generale et
-          // on attribue une class couleur en fonction de bonne ou mauvaise reponse
+          // on attribue une class couleur en fonction de bonne ou mauvaise reponse ou
+          // pas de réponse
           const formsGe = document.querySelectorAll('.question-qcm-forms-general')
           formsGe.forEach(function(form){
               let indexForm = form.dataset.index;
@@ -32,10 +33,14 @@ const handleQcmResults = () => {
                   else if (input.checked && goodAnswer !== input.value){
                       input.classList.add('red')
                   }
+                  else if (input.checked === false){
+                      input.classList.add('blue')
+                  }
               })
           })
           // on ajoute 1 ds arraySpecific à chq bonne reponse pr la partie specifique et
-          // on attribue une class couleur en fonction de bonne ou mauvaise reponse
+          // on attribue une class couleur en fonction de bonne ou mauvaise reponse ou
+          // pas de reponse
           const formsSpe = document.querySelectorAll('.question-qcm-forms-specific')
           formsSpe.forEach(function(form){
               let indexForm = form.dataset.index;
@@ -48,6 +53,9 @@ const handleQcmResults = () => {
                   }
                   else if (input.checked && goodAnswer !== input.value){
                       input.classList.add('red')
+                  }
+                  else if (input.checked === false){
+                      input.classList.add('blue')
                   }
               })
           })
@@ -63,7 +71,7 @@ const handleQcmResults = () => {
           })
           // au clic sur le btn voir correction, on affiche les div d'explications
           // et on passe les mauvaises réponses en rouge et les bonnes en vert
-          // si mauvaise reponse, on affiche le p qui indique la bonne reponse
+          // si mauvaise reponse ou pas de reponse, on affiche le p qui indique la bonne reponse
           // on cache le btn valider les reponses et on display le lien retour accueil
           // on scroll au début du qcm
           correctionButton.addEventListener('click', function(){
@@ -72,7 +80,7 @@ const handleQcmResults = () => {
               document.querySelectorAll('.red').forEach(elem => elem.parentElement.style.color = "red")
               answers.forEach(answer => answer.classList.toggle('hide-element'))
               inputs.forEach(function(input){
-                  if (input.classList.contains('red')){
+                  if (input.classList.contains('red') || input.classList.contains('blue')){
                     // on recup le p qui donne la bonne reponse
                     input.parentElement.parentElement.lastElementChild.firstElementChild.classList.toggle('hide-element')
                   }
