@@ -29,6 +29,7 @@ import { handleValidateQuestion } from '../components/handleValidateQuestion';
 import { handleQcmResults } from '../components/handleQcmResults';
 import { secretCode } from '../components/secretCode';
 import { backToTop } from '../components/backToTop';
+import { timer } from '../components/timer';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
@@ -38,4 +39,5 @@ document.addEventListener('turbolinks:load', () => {
   handleQcmResults();
   secretCode();
   backToTop();
+  timer();
 });

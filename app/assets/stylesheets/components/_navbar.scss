@@ -22,6 +22,22 @@
 #login-signup {
   display: none; // hide if secretkey has not been typed
 }
+.timer {
+  background: darken(white, 10%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  p {
+    margin-block-start: 0;
+    margin-block-end: 0;
+    padding: 5px;
+   }
+   i {
+     font-size: 1.5rem;
+     padding: 5px;
+   }
+}
 // responsive
 // xs devices (portrait phones less than 576 px)
 @media (max-width: 575.98px) {
