@@ -8,8 +8,8 @@ const timer = () => {
 
     if(level) {
         let time;
-        level.dataset.level === 'départemental' ? time = 1200 : time = 1800 // nb de min en secondes
-
+        level.dataset.level === 'départemental' ? time = 20 : time = 1800 // nb de min en secondes
+        console.log(time)
         const interval = setInterval(handleTimer, 1000); // intervalle d'1 sec en milliseconds
 
         function handleTimer(){
@@ -26,12 +26,16 @@ const timer = () => {
           if (time == 0){
               clearInterval(interval)
               submitButton.click()  //submit le form
-          } else if (time-- < 60 ) {
+          } else if (time-- < 10 ) {
               timerDiv.style.backgroundColor = "red";
           }
+          // au clic sur le btn valider, on stoppe le timer
+          submitButton.addEventListener('click', function(){
+            clearInterval(interval);
+          })
         }
-        // au clic sur le btn valider, on stoppe le timer
-        submitButton.addEventListener('click', clearInterval(interval));
+
+
     }
 }
 
