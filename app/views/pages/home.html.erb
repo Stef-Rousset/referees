@@ -11,11 +11,11 @@
           <div class="questions-level-inputs">
             <div class="level-choice">
               <%= label_tag "questions-level-dep", 'Départemental' %>
-              <%= radio_button_tag(:level, "départemental") %>
+              <%= radio_button_tag 'level', 'départemental', false, required: true %>
             </div>
             <div class="level-choice">
               <%= label_tag "questions-level-reg", 'Régional' %>
-              <%= radio_button_tag(:level, "régional") %>
+              <%= radio_button_tag 'level', 'régional', false, required: true %>
             </div>
           </div>
         </div>
@@ -24,24 +24,24 @@
           <div class="questions-category-inputs">
             <div class="category-choice">
               <%= label_tag "questions-category-general", 'Généralités' %>
-              <%= radio_button_tag(:category, "généralités") %>
+              <%= radio_button_tag 'category', 'généralités', false, required: true %>
             </div>
             <div class="category-choice">
               <%= label_tag "questions-category-fleuret", 'Spécifique fleuret' %>
-              <%= radio_button_tag(:category, "fleuret") %>
+              <%= radio_button_tag 'category', 'fleuret', false, required: true %>
             </div>
             <div class="category-choice">
               <%= label_tag "questions-category-epee", 'Spécifique épée' %>
-              <%= radio_button_tag(:category, "épée") %>
+              <%= radio_button_tag 'category', 'épée', false, required: true %>
             </div>
             <div class="category-choice">
               <%= label_tag "questions-category-sabre", 'Spécifique sabre' %>
-              <%= radio_button_tag(:category, "sabre") %>
+              <%= radio_button_tag 'category', 'sabre', false, required: true %>
             </div>
           </div>
         </div>
         <div class="filters-buttons">
-          <%= submit_tag 'Commencer', class: 'btn-blue submit-questions-choice not-allowed' %>
+          <%= submit_tag 'Commencer', class: 'btn-blue submit-questions-choice ' %>
           <a href="/" class='btn-blue'><i class="fas fa-backward"></i> Accueil</a>
         </div>
       <% end %>
@@ -55,11 +55,11 @@
           <div class="questions-level-inputs">
             <div class="level-choice">
               <%= label_tag "questions-level-dep", 'Départemental' %>
-              <%= radio_button_tag(:level, "départemental") %>
+              <%= radio_button_tag 'level', 'départemental', false, required: true  %>
             </div>
             <div class="level-choice">
               <%= label_tag "questions-level-reg", 'Régional' %>
-              <%= radio_button_tag(:level, "régional") %>
+              <%= radio_button_tag 'level', 'régional', false, required: true %>
             </div>
           </div>
         </div>
@@ -68,20 +68,20 @@
           <div class="questions-category-inputs">
             <div class="category-choice-qcm">
               <%= label_tag "questions-category-fleuret", 'Fleuret' %>
-              <%= radio_button_tag(:category, "fleuret") %>
+              <%= radio_button_tag 'category', 'fleuret', false, required: true %>
             </div>
             <div class="category-choice-qcm">
               <%= label_tag "questions-category-epee", 'Épée' %>
-              <%= radio_button_tag(:category, "épée") %>
+              <%= radio_button_tag 'category', 'épée', false, required: true %>
             </div>
             <div class="category-choice-qcm">
               <%= label_tag "questions-category-sabre", 'Sabre' %>
-              <%= radio_button_tag(:category, "sabre") %>
+              <%= radio_button_tag 'category', 'sabre', false, required: true %>
             </div>
           </div>
         </div>
         <div class="filters-buttons">
-          <%= submit_tag 'Commencer le qcm', class: 'btn-blue submit-qcm-choice not-allowed' %>
+          <%= submit_tag 'Commencer le qcm', class: 'btn-blue submit-qcm-choice' %>
           <a href="/" class='btn-blue'><i class="fas fa-backward"></i> Accueil</a>
         </div>
       <% end %>
