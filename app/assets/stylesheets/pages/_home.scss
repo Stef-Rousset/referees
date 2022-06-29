@@ -23,6 +23,10 @@
   }
   a {
     color: #212529;
+    font-style: italic;
+  }
+  span {
+    font-style: italic;
   }
 }
 .home-text-btns {
@@ -79,21 +83,74 @@
 // responsive with bootstrap breakpoints
 // xs devices (portrait phones less than 576 px)
 @media (max-width: 575.98px) {
+  .home-container {
+    height: 60vh;
+  }
   .home-text {
     width: 95%;
     flex-direction: column;
     justify-content: space-evenly;
   }
+  .home-text-welcome {
+    margin: 0;
+    p, a, button {
+      font-size: 0.9rem !important;
+    }
+    p {
+      margin-bottom: 1.5rem;
+    }
+    button {
+      width: 38vw;
+    }
+
+  }
   .filters-questions, .filters-questions-qcm {
+    h2 {
+      font-size: 1.3rem !important;
+    }
+    h3 {
+      font-size: 1.1rem !important;
+    }
     label {
       font-size: 0.9rem !important;
     }
   }
+  .filters-buttons {
+    margin-top: 2rem;
+  }
 }
 // Small devices (landscape phones, 576px and up)
 @media (min-width: 576px) and (max-width: 767.98px) {
+  .home-container {
+    height: 52vh;
+    margin-top: 1rem;
+  }
   .home-text {
     width: 95%;
+  }
+  .home-text-welcome {
+    margin: 0;
+    p, a, button {
+      font-size: 0.9rem !important;
+    }
+    p {
+      margin-bottom: 1rem;
+    }
+    button {
+      width: 38vw;
+      margin-bottom: 0.75rem;
+    }
+  }
+  .filters-questions, .filters-questions-qcm {
+    h2 {
+      font-size: 1.3rem !important;
+    }
+    h3 {
+      font-size: 1.1rem !important;
+    }
+    label {
+      font-size: 0.9rem !important;
+    }
   }
 }
 // Medium devices (tablets, 768px and up)
@@ -103,8 +160,11 @@
   }
   .filters-questions, .filters-questions-qcm {
     margin-top: 2rem;
+    h2 {
+      margin-bottom: 2rem;
+    }
   }
-    label {
+  label {
       font-size: 1.2rem !important;
     }
   .filters-buttons {
@@ -112,8 +172,11 @@
   }
 }
 // Large devices (desktops, 992px and up)
-//@media (min-width: 992px) {
-//}
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .home-container {
+    height: 45vh;
+  }
+}
 // X-Large devices (large desktops, 1200px and up)
 //@media (min-width: 1200px) {
 //}
