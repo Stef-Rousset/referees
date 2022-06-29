@@ -1,7 +1,20 @@
 <div class="home-container" role="main">
   <div class="home-text">
-    <button class="btn-blue select-questions"> Sélectionner des questions</button>
-    <button class="btn-blue complete-qcm"> QCM complet chronométré</button>
+    <div class="home-text-welcome">
+      <p>
+      L'objectif de ce site est de vous permettre de vous entraîner au qcm d'arbitrage,
+      première étape pour entrer en formation d'arbitre départemental ou régional.<br>
+      Nous vous conseillons vivement de lire au préalable les différents documents disponibles
+      dans la rubrique <%= link_to "Ressources", ressources_path %>.<br>
+      Vous avez la possibilité soit de sélectionner un type de questions, soit de passer un
+      qcm complet chronométré (20 min pour le départemental, 30 minutes pour le régional).<br><br>
+      Bon entraînement !
+      </p>
+      <div class="home-text-btns">
+        <button class="btn-blue select-questions"> Sélectionner des questions</button>
+        <button class="btn-blue complete-qcm"> QCM complet chronométré</button>
+      </div>
+    </div>
     <!-- au clic sur selectionner des questions -->
     <div class="filters-questions hide-element">
       <h2>Filtrer les questions par</h2>
