@@ -1,3 +1,6 @@
+<% content_for :meta_title, "Arbire d'escrime - Questions" %>
+<% content_for :meta_description, "Entraînes-toi avec le type de questions sélectionné" %>
+
 <div class="questions-index-container">
 <% @questions.each do |question| %>
   <h3><%= @count %> questions de niveau <%= question.level %>, catégorie <%= question.category %></h3>

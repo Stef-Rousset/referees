@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>We're sorry, but something went wrong (500)</title>
+  <title>Une erreur s'est produite (500)</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <style>
   .rails-default-error-page {
-    background-color: #EFEFEF;
-    color: #2E2F30;
+    background-color: #192A44;
+    color: white;
     text-align: center;
     font-family: arial, sans-serif;
     margin: 0;
@@ -51,16 +51,41 @@
     color: #666;
     box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
   }
+  .content-error {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .carton {
+    width: 50%;
+    margin: auto;
+  }
+  .error {
+    color: #666;
+  }
+  .link {
+    text-decoration: none;
+    color: #730E15;
+    font-weight: bold;
+    margin-bottom: 1em;
+  }
+  a:hover {
+    color: #999;
+  }
   </style>
 </head>
 
 <body class="rails-default-error-page">
   <!-- This file lives in public/500.html -->
   <div class="dialog">
-    <div>
-      <h1>We're sorry, but something went wrong.</h1>
+    <div class="content-error">
+      <h1>Oops, une erreur s'est produite...</h1>
+      <p class= "error">( Erreur 500 )</p>
+      <img class="carton" src="/assets/carton.png" />
+      <a href="/" class="link">Retour a la page d'accueil</a>
     </div>
-    <p>If you are the application owner check the logs for more information.</p>
+    <p>Si tu es le webmaster, verifie les logs pour plus d'infos</p>
   </div>
 </body>
 </html>

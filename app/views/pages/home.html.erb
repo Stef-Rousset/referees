@@ -1,42 +1,57 @@
 <div class="home-container" role="main">
   <div class="home-text">
-    <button class="btn-blue select-questions"> Sélectionner des questions</button>
-    <button class="btn-blue complete-qcm"> QCM complet chronométré</button>
+    <div class="home-text-welcome">
+      <p>
+      L'objectif de ce site est de vous permettre de vous entraîner au qcm d'arbitrage,
+      première étape pour entrer en formation d'arbitre départemental ou régional.<br>
+      Nous vous conseillons vivement de lire au préalable les différents documents disponibles
+      dans la rubrique <%= link_to "Ressources", ressources_path %>.<br>
+      Vous avez la possibilité soit de sélectionner un type de questions, soit de passer un
+      qcm complet chronométré (20 min pour le départemental, 30 minutes pour le régional).<br>
+      <span>Bon entraînement !</span>
+      </p>
+      <div class="home-text-btns">
+        <button class="btn-blue select-questions"> Sélectionner des questions</button>
+        <button class="btn-blue complete-qcm"> QCM complet chronométré</button>
+      </div>
+    </div>
     <!-- au clic sur selectionner des questions -->
     <div class="filters-questions hide-element">
-      <h2>Filtrer les questions par</h2>
-      <%= form_with(url: questions_path, method: 'get', local: true, class: "questions-search-form") do %>
-        <div class="questions-level-search">
-          <h3>Niveau :</h3>
-          <div class="questions-level-inputs">
-            <div class="level-choice">
-              <%= label_tag "questions-level-dep", 'Départemental' %>
-              <%= radio_button_tag 'level', 'départemental', false, required: true %>
-            </div>
-            <div class="level-choice">
-              <%= label_tag "questions-level-reg", 'Régional' %>
-              <%= radio_button_tag 'level', 'régional', false, required: true %>
+      <h2>Choix du type de questions</h2>
+      <%= form_with(url: questions_path, method: 'get', local: true, class: "question-search-form") do %>
+        <div class="question-search">
+          <div class="question-category-search">
+            <h3>Catégorie :</h3>
+            <div class="question-category-inputs">
+              <div class="categories-choice">
+                <%= label_tag "questions-category-general", 'Généralités' %>
+                <%= radio_button_tag 'category', 'généralités', false, required: true %>
+              </div>
+              <div class="categories-choice">
+                <%= label_tag "questions-category-fleuret", 'Spécifique fleuret' %>
+                <%= radio_button_tag 'category', 'fleuret', false, required: true %>
+              </div>
+              <div class="categories-choice">
+                <%= label_tag "questions-category-epee", 'Spécifique épée' %>
+                <%= radio_button_tag 'category', 'épée', false, required: true %>
+              </div>
+              <div class="categories-choice">
+                <%= label_tag "questions-category-sabre", 'Spécifique sabre' %>
+                <%= radio_button_tag 'category', 'sabre', false, required: true %>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="questions-category-search">
-          <h3>Catégorie :</h3>
-          <div class="questions-category-inputs">
-            <div class="category-choice">
-              <%= label_tag "questions-category-general", 'Généralités' %>
-              <%= radio_button_tag 'category', 'généralités', false, required: true %>
-            </div>
-            <div class="category-choice">
-              <%= label_tag "questions-category-fleuret", 'Spécifique fleuret' %>
-              <%= radio_button_tag 'category', 'fleuret', false, required: true %>
-            </div>
-            <div class="category-choice">
-              <%= label_tag "questions-category-epee", 'Spécifique épée' %>
-              <%= radio_button_tag 'category', 'épée', false, required: true %>
-            </div>
-            <div class="category-choice">
-              <%= label_tag "questions-category-sabre", 'Spécifique sabre' %>
-              <%= radio_button_tag 'category', 'sabre', false, required: true %>
+          <div class="question-level-search">
+            <h3>Niveau :</h3>
+            <div class="question-level-inputs">
+              <div class="levels-choice">
+                <%= label_tag "questions-level-dep", 'Départemental' %>
+                <%= radio_button_tag 'level', 'départemental', false, required: true %>
+              </div>
+              <div class="levels-choice">
+                <%= label_tag "questions-level-reg", 'Régional' %>
+                <%= radio_button_tag 'level', 'régional', false, required: true %>
+              </div>
             </div>
           </div>
         </div>
@@ -49,34 +64,36 @@
     <!-- au clic sur qcm complet -->
     <div class="filters-questions-qcm hide-element">
       <h2>Choix du type de QCM</h2>
-      <%= form_with(url: qcm_path, method: 'get', local: true, class: "questions-search-form") do %>
-        <div class="questions-level-search">
-          <h3>Niveau :</h3>
-          <div class="questions-level-inputs">
-            <div class="level-choice">
-              <%= label_tag "questions-level-dep", 'Départemental' %>
-              <%= radio_button_tag 'level', 'départemental', false, required: true  %>
-            </div>
-            <div class="level-choice">
-              <%= label_tag "questions-level-reg", 'Régional' %>
-              <%= radio_button_tag 'level', 'régional', false, required: true %>
+      <%= form_with(url: qcm_path, method: 'get', local: true, class: "question-search-form") do %>
+        <div class="question-search">
+          <div class="question-category-search">
+            <h3>Catégorie :</h3>
+            <div class="question-category-inputs">
+              <div class="categories-choice-qcm">
+                <%= label_tag "questions-category-fleuret", 'Fleuret' %>
+                <%= radio_button_tag 'category', 'fleuret', false, required: true %>
+              </div>
+              <div class="categories-choice-qcm">
+                <%= label_tag "questions-category-epee", 'Épée' %>
+                <%= radio_button_tag 'category', 'épée', false, required: true %>
+              </div>
+              <div class="categories-choice-qcm">
+                <%= label_tag "questions-category-sabre", 'Sabre' %>
+                <%= radio_button_tag 'category', 'sabre', false, required: true %>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="questions-category-search">
-          <h3>Catégorie :</h3>
-          <div class="questions-category-inputs">
-            <div class="category-choice-qcm">
-              <%= label_tag "questions-category-fleuret", 'Fleuret' %>
-              <%= radio_button_tag 'category', 'fleuret', false, required: true %>
-            </div>
-            <div class="category-choice-qcm">
-              <%= label_tag "questions-category-epee", 'Épée' %>
-              <%= radio_button_tag 'category', 'épée', false, required: true %>
-            </div>
-            <div class="category-choice-qcm">
-              <%= label_tag "questions-category-sabre", 'Sabre' %>
-              <%= radio_button_tag 'category', 'sabre', false, required: true %>
+          <div class="question-level-search">
+            <h3>Niveau :</h3>
+            <div class="question-level-inputs">
+              <div class="levels-choice">
+                <%= label_tag "questions-level-dep", 'Départemental' %>
+                <%= radio_button_tag 'level', 'départemental', false, required: true  %>
+              </div>
+              <div class="levels-choice">
+                <%= label_tag "questions-level-reg", 'Régional' %>
+                <%= radio_button_tag 'level', 'régional', false, required: true %>
+              </div>
             </div>
           </div>
         </div>
