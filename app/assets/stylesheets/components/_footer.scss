@@ -28,21 +28,31 @@
     width: 30%;
     a {
       text-align: center;
-      font-size: 0.9rem !important;
+      font-size: 0.8rem !important;
     }
   }
   .footer-link-right {
     width: 65%;
     a {
       text-align: center;
-      font-size: 0.9rem !important;
+      font-size: 0.8rem !important;
     }
   }
 }
 // Medium devices (tablets, 768px and up)
 @media (min-width: 768px) and (max-width: 991.98px) {
-  .footer-link-right {
-    width: 45%;
+  .footer-link-left {
+    a {
+      text-align: center;
+      font-size: 0.8rem !important;
+    }
   }
+  .footer-link-right {
+    width: 50%;
+  }
+  a {
+      text-align: center;
+      font-size: 0.8rem !important;
+    }
 }
 
