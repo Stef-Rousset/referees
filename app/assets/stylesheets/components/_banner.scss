@@ -78,8 +78,31 @@
     margin-bottom: 0.5rem;
   }
 }
+// phones and orientation landscape
+@media (min-width: 768px) and (max-width: 990px) and (orientation: landscape) {
+  .banner-container {
+    height: 35vh;
+  }
+  .banner-img {
+    background-size: cover;
+    display: none;
+  }
+  .banner-text {
+    width: 100%;
+    margin: 0.5rem;
+    h1 {
+      font-size: 1.2rem !important;
+    }
+    h2 {
+      font-size: 1rem !important;
+    }
+  }
+  .banner-second-title {
+    margin-bottom: 0.5rem;
+  }
+}
 // Medium devices and X-Large devices
-@media (min-width: 768px) and (max-width: 1199.98px) {
+@media (min-width: 768px) and (max-width: 1199.98px){
   .banner-container {
     height: 35vh;
   }
