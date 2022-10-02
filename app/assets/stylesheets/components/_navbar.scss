@@ -44,4 +44,10 @@
   .navbar-toggler {
     display: none;
   }
+  .navbar-left-links {
+    justify-content: space-around;
+  }
+  .nav-link {
+    padding: 0.5rem 0.75rem !important;
+  }
 }
