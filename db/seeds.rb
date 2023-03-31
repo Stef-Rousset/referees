@@ -11,11 +11,13 @@
 #p 'Delete answers'
 #Answer.destroy_all
 p 'creating one user'
-user_one = User.create!(email: "strabon@club-internet.fr",
-                        first_name: "stéphanie",
-                        last_name: "martin-rousset",
-                        role: "contributor"
-                        )
+user_one = User.create!(
+  email: "strabon@club-internet.fr",
+  first_name: "stéphanie",
+  last_name: "martin-rousset",
+  role: "contributor",
+  password: "lknhro;eirthjj095uy4059yu"
+)
 
 p 'creating 3 questions'
 q_one = Question.create!(statement: "Le tireur qui traîne la pointe de son épée sur la piste s’expose",
