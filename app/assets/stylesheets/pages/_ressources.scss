@@ -19,14 +19,10 @@
     font-size: 1.2rem;
     text-decoration: none;
     font-family: $body-font;
-    &:hover {
-      text-decoration: none;
-      opacity: 0.8;
-    }
-    &:visited {
-      color: $dark-blue;
-    }
   }
+}
+.special-link {
+  font-weight: bold;
 }
 .fa-check {
   font-size: 0.8rem;
